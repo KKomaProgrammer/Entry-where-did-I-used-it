@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "엔트리-어디썼더라?",
+  "version": "1.0.0",
+  "description": "엔트리 작품 만들기의 함수 안에 사용된 변수, 리스트를 속성 탭에서 볼 수 있게 해줍니다!",
+  "icons": {
+    "16": "icon256.png",
+    "32": "icon256.png",
+    "48": "icon256.png",
+    "128": "icon256.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://playentry.org/ws/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["https://playentry.org/*"]
+    }
+  ]
+}
